@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'index' => 'home#index'
+  get 'index' => 'home#index'
   resources :users
   resources :sections
-
+  root 'home#index'
 end
