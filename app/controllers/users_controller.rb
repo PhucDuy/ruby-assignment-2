@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome #{@user.name}"
+      flash[:success] = "Welcome #{@user.name} with password #{@user.password}"
       session[:user_id] = @user.id
       redirect_to users_path
     else

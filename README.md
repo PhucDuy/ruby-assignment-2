@@ -4,9 +4,9 @@ SimpleChat is a Ruby on Rails blog application that allows users to send message
 
 Submitted by: Tran Duy Phuc
 
-Time spent: **X** hours
+Time spent: 20 hours
 
-URL: **Insert your Heroku URL here**
+URL: https://sheltered-peak-13461.herokuapp.com/
 
 ## User Stories
 
