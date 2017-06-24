@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome #{@user.name} with password #{@user.password}"
       session[:user_id] = @user.id
-      redirect_to users_path
+      redirect_to messages_path
     else
       flash[:error] = "Error: #{@user.errors.full_messages.to_sentence}"
       render 'new'
