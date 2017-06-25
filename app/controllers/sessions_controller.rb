@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
     if @user = User.find_by(email: params[:email])
       if @user.authenticate(params[:password])
+        flash[:success] = "Welcome #{@user.name}"
         session[:user_id] = @user.id
         redirect_to messages_path
       else

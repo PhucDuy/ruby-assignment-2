@@ -1,14 +1,7 @@
-<h1>Simplechat</h1>
-<div class="row">
-  <div class="col-md-4 conversations">
-  </div>
-  <div class="col-md-8 conversation">
-  </div>
-</div>
-<div class="row mt-1">
-  <div class="col-md-6">
-    <%= link_to "Add friend", nil , class: "btn btn-primary" %>
-    <%= link_to "new message", nil , class: "btn btn-primary" %>
-    <%= link_to "Sent messages", nil , class: "btn btn-primary" %>
-  </div>
+<div class="container users-index mt-1">
+  <% @users.in_groups_of(3) do |group| %>
+    <div class="row">
+      <%= render partial: 'user', collection: group.compact %>
+    </div>
+  <% end %>
 </div>
