@@ -1,0 +1,28 @@
+<h1>Messages</h1>
+<table class="table table-stripped">
+  <thead class="thead thead-default">
+    <tr>
+      <th>Sender</th>
+      <th>Readed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.sender.name%></td>
+        <% if message.unread?(current_user) %>
+          <td><%= link_to "Show", message_path(:id => message.id), class: "btn btn-info" %></td>
+        <% else %>
+          <td>Readed</td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="row">
+  <div class="col-md-8">
+    <%= link_to "New message", new_message_path , class: "btn btn-primary"%>
+    <%= link_to "Add friends", users_path , class: "btn btn-primary"%>
+    <%= link_to "Sent messages", sent_messages_path , class: "btn btn-primary"%>
+  </div>
+</div>

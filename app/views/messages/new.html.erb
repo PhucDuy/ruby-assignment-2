@@ -1,0 +1,14 @@
+<h1>Sent message</h1>
+<%= form_for @message do |f| %>
+  <div class="form-group">
+    <%= f.label :body%>
+    <%= f.text_area :body, class: 'form-control', placeholder: "Type your message here" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipient_id %>
+    <%= f.select (:recipient_id) do %>
+      <% options_from_collection_for_select(@users,:id,:name) %>
+    <% end %>
+  </div>
+  <%= f.submit "Send", class: 'btn btn-primary' %>
+<% end %>
